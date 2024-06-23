@@ -4,3 +4,5 @@
 /examples/resource/Cargo.lock
 /examples/single_component/target
 /examples/single_component/Cargo.lock
+/examples/func_bug_demo/target
+/examples/func_bug_demo/Cargo.lock

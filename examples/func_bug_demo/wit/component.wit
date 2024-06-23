@@ -1,0 +1,15 @@
+package test:guest;
+
+interface host {
+    host-fn: func(param: option<s32>);
+    // host-fn: func(param: option<f64>);
+}
+
+interface foo {
+    fn-calling-host-fn: func();
+}
+
+world guest {
+    import host;
+    export foo;
+}

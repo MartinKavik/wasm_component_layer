@@ -3,7 +3,12 @@ macro_rules! require_matches {
     ($expression:expr, $pattern:pat $(if $guard:expr)?, $then: expr) => {
         match $expression {
             $pattern $(if $guard)? => $then,
-            _ => bail!("Incorrect type.")
+            _ => { 
+                let file = file!();
+                let line = line!();
+                let column = column!();
+                bail!("Incorrect type. {file}:{line}:{column}")
+            }
         }
     };
 }
